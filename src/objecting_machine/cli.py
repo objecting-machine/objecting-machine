@@ -16,7 +16,7 @@ import fileinput
 
 def handle_sigint(signum, frame):
     # Send the acknowledgment to stderr
-    sys.stderr.write("machine-name: SIGINT received, exiting.\n")
+    sys.stderr.write("objecting-machine: SIGINT received, exiting.\n")
     sys.stderr.flush()
     sys.exit(0)
 
@@ -68,15 +68,15 @@ def run(provider_api_key, github_token, mode):
         raw_input += line
 
     from .machine import machine
-    machine_name = {settings['name']}
+    objecting_machine = {settings['name']}
     try:
         text, thoughts = machine(raw_input)
         # json.dump((thoughts_output, text_output), sys.stdout)
-        sys.stdout.write(f'{machine_name}: (to itself) {thoughts}\n')
-        sys.stdout.write(f'{machine_name}: {text}\n')
+        sys.stdout.write(f'{objecting_machine}: (to itself) {thoughts}\n')
+        sys.stdout.write(f'{objecting_machine}: {text}\n')
         sys.stdout.flush()
     except Exception as e:
-        sys.stderr.write(f'{machine_name} did not work {e}')
+        sys.stderr.write(f'{objecting_machine} did not work {e}')
         sys.stderr.flush()
         sys.exit(0)
 
