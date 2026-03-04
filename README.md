@@ -1,5 +1,5 @@
 # Objecting Machine
-Machine description
+A Machine that objects to any and every statement.
 ```bash
   echo '[{"role": "user", "content": "I have a question..."}]' \
     | uvx objecting-machine \
