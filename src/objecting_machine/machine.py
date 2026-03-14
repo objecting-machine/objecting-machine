@@ -29,7 +29,7 @@ def machine(plato_text, **kwargs):
     if provider == 'OpenAI':
         # Transform plato_text to MUJ format
         messages = plato_text_to_muj(plato_text=plato_text,
-                                     machine_name=name)
+                                     objecting_machine=name)
         # Call OpenAI API via opehaina
         environ['OPENAI_API_KEY'] = api_key
         import opehaina
@@ -45,7 +45,7 @@ def machine(plato_text, **kwargs):
     elif provider == 'Gemini':
         # Transform plato_text to MPUJ format
         messages = plato_text_to_mpuj(plato_text=plato_text,
-                                     machine_name=name)
+                                     objecting_machine=name)
         # Call Gemini through castor-polux
         environ['GEMINI_API_KEY'] = api_key
         import castor_pollux
@@ -61,7 +61,7 @@ def machine(plato_text, **kwargs):
     elif provider == 'Anthropic':
         # Transform plato_text to MUJ format
         messages = plato_text_to_muj(plato_text=plato_text,
-                                     machine_name=name)
+                                     objecting_machine=name)
 
         # Call the Anthropic API via electroid
         environ['ANTHROPIC_API_KEY'] = api_key
